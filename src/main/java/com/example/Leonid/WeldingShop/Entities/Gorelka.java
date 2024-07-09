@@ -2,21 +2,23 @@ package com.example.Leonid.WeldingShop.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Embeddable
+import java.util.UUID;
+
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Table(name = "gorelka")
-@Component
 public class Gorelka {
 
-
-    private int length = 5;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    private int length;
 
     public void showLength(){
         System.out.println(length);

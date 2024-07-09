@@ -1,10 +1,25 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Сварочники</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
     Текст
+    <input id="inputBT" type="number" placeholder="Длина горелки">
+    <button id="createBT">
+        Создать горелку!
+    </button>
+
+    <div id="allweldings">
+        Список всех сварочных аппаратов:<br>
+        <tr th:each="welding: ${allweldings}">
+            <td th:text="${welding.id}" /> <br>
+            <td th:text="${welding.name}" /> <br>
+            <td th:text="${welding.price}" />
+        </tr>
+    </div>
+
+<!-- <script src="script.js"></script> -->
 </body>
 </html>

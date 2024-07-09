@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
@@ -14,15 +12,13 @@ import java.util.UUID;
 @Setter
 @ToString
 @Table(name = "weldings")
-@Component
 public class WeldingMachine {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
     private int price;
 
-    @Embedded
-    @Autowired
+    @ManyToOne
     private Gorelka gorelka;
 }
