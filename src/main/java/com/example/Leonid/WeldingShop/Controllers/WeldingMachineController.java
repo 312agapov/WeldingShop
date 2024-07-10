@@ -7,10 +7,7 @@ import com.example.Leonid.WeldingShop.Repositories.WeldingMachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +23,7 @@ public class WeldingMachineController {
 
     @GetMapping("/")
     public String weldings(){
-        return "weldings";
+        return "mainpage";
     }
     @ResponseBody
     @PostMapping("/blowtorch")
@@ -46,6 +43,19 @@ public class WeldingMachineController {
     public String showWeldings(Model model){
         List<WeldingMachine> data = weldingMachineRepository.findAll();
         model.addAttribute("allweldings",data);
-        return "weldings";
+        return "allweldings";
+    }
+
+    @PostMapping("/addweldingmachine")
+    public String addWeldingMachine(@ModelAttribute ("weldingmachine") WeldingMachine weldingMachine){
+        System.out.println(weldingMachine);
+        weldingMachineRepository.save(weldingMachine);
+        return "addweldingmachine";
+    }
+
+    @GetMapping("/addweldingmachine")
+    public String addWeldingMachineForm(Model model) {
+        model.addAttribute("weldingmachine", new WeldingMachine());
+        return "addweldingmachine";
     }
 }
