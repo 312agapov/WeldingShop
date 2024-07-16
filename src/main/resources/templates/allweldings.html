@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <div id="allweldings">
-         Список всех сварочных аппаратов:<br>
+    <div>
+         Список всех сварочных аппаратов:<br><br>
         <tr th:each="welding: ${allweldings}">
             ID: <td th:text="${welding.id}" /> <br>
             Название: <td th:text="${welding.name}" /> <br>
             Цена: <td th:text="${welding.price}" /> руб.<br>
             ID горелки: <td th:text="${welding.gorelka.id}" /> <br>
-            Длина горелки: <td th:text="${welding.gorelka.length}" /> м.<br>
+            Длина горелки: <td th:text="${welding.gorelka.length}" /> м.<br> <br>
         </tr>
     </div>
 

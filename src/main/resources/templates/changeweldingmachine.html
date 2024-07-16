@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Сварочники</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div>
+        Выберите аппарат для изменения параметров: <br>
+        <form th:action="@{/changeweldingmachine}" method="get">
+            <select class="weldingmachine" name="id">
+                <option value="">Выберите аппарат для изменения</option>
+                <option th:each="weldingmachine: ${allweldings}"
+                        th:value="${weldingmachine.id}"
+                        th:text="${weldingmachine.name}">
+                </option>
+            </select>
+            <button type="submit">Выбрать сварочный аппарат</button>
+        </form>
+        <br><br>
+        Впишите новые параметры сварочного аппарата: <br>
+            <input type="text" th:field="*{weldingmachine.name}" placeholder="Название"/>
+            <input type="text" th:field="*{weldingmachine.price}" placeholder="Цена"/>
+            <input type="text" th:field="*{weldingmachine.gorelka.length}" placeholder="Длина горелки"/>
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+
+    <br><a href="/"> Вернуться на главную</a>
+
+<!-- <script src="script.js"></script>  th:object="${weldingmachine}" -->
+</body>
+</html>

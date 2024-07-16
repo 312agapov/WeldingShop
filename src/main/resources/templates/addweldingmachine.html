@@ -10,7 +10,7 @@
         <form th:action="@{/addweldingmachine}" method="post" >
             <input type="text" th:field="*{weldingmachine.name}" placeholder="Название"/>
             <input type="text" th:field="*{weldingmachine.price}" placeholder="Цена"/>
-            <!--<input type="text" th:field="*{gorelka_id.price}" placeholder="Длина горелки"/>-->
+            <input type="text" th:field="*{weldingmachine.gorelka.length}" placeholder="Длина горелки"/>
             <button type="submit">Добавить</button>
         </form>
     </div>
