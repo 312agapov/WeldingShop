@@ -1,4 +1,4 @@
-package com.example.Leonid.WeldingShop.Services;
+package leonid.weldingshop.services;
 
 import org.springframework.stereotype.Service;
 

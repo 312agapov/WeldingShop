@@ -1,15 +1,14 @@
-package com.example.Leonid.WeldingShop.Controllers;
+package leonid.weldingshop.controllers;
 
-import com.example.Leonid.WeldingShop.Entities.Gorelka;
-import com.example.Leonid.WeldingShop.Entities.WeldingMachine;
-import com.example.Leonid.WeldingShop.Repositories.GorelkaRepository;
-import com.example.Leonid.WeldingShop.Repositories.WeldingMachineRepository;
+import leonid.weldingshop.entities.Gorelka;
+import leonid.weldingshop.entities.WeldingMachine;
+import leonid.weldingshop.repositories.GorelkaRepository;
+import leonid.weldingshop.repositories.WeldingMachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 

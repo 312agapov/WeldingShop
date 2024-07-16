@@ -1,7 +1,7 @@
-package com.example.Leonid.WeldingShop.Repositories;
+package leonid.weldingshop.repositories;
 
 
-import com.example.Leonid.WeldingShop.Entities.WeldingMachine;
+import leonid.weldingshop.entities.WeldingMachine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

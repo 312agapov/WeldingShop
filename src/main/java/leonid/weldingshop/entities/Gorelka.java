@@ -1,4 +1,4 @@
-package com.example.Leonid.WeldingShop.Entities;
+package leonid.weldingshop.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
